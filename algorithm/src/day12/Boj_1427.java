@@ -13,9 +13,6 @@ public class Boj_1427 {
         Collections.sort(list);
         Collections.reverse(list);
 
-        for(int i=0; i<list.size(); i++) {
-            System.out.print(list.get(i));
-
-        }
+        list.stream().forEach(p -> System.out.print(p));
     }
 }
