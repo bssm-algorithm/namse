@@ -8,16 +8,24 @@ import java.util.StringTokenizer;
 public class Boj_2953 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        int a = Integer.parseInt(st.nextToken());
-        int b = Integer.parseInt(st.nextToken());
-        int cnt = 0;
+        int sum = 0;
+        int[] n = new int[5];
+        int max = 0;
+        int index = 0;
 
-        for(int i=a+1; i<b; i++) {
-            for(int j=0; j<i; j++) {
-                cnt++;
+        for(int i=0; i<5; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+            for(int j=0; j<4; j++) {
+                sum += Integer.parseInt(st.nextToken());
             }
+
+            if(sum > max) {
+                max = sum;
+                index = i+1;
+            }
+            sum = 0;
         }
-        System.out.println(cnt);
+
+        System.out.println(index + " " + max);
     }
 }
