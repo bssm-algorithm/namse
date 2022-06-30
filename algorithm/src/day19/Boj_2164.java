@@ -12,6 +12,19 @@ public class Boj_2164 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         Queue<Integer> que = new LinkedList<>();
+
+        for(int i=1; i<=n; i++) {
+            que.offer(i);
+        }
+
+        while(que.size() > 1) {
+            que.poll();
+            que.offer(que.poll());
+        }
+
+        System.out.println(que.poll());
+
+/*      내코드
         for(int i=1; i<=n; i++) {
             que.add(i);
         }
@@ -23,5 +36,7 @@ public class Boj_2164 {
             que.add(a);
         }
         System.out.println(que.peek());
+
+ */
     }
 }
