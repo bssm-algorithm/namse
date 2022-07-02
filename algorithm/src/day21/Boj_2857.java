@@ -17,14 +17,10 @@ public class Boj_2857 {
             String s = br.readLine();
             if(s.contains("FBI")) {
                 list.add(i);
-                re22 = true;
-            }
-            else {
-                re = true;
             }
         }
 
-        if(re == true && re22 == false) {
+        if(list.isEmpty()) {
             System.out.println("HE GOT AWAY!");
         }
         else {
