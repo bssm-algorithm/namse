@@ -4,9 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Boj_7567 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+/*      내코드
+        1. 너무 이상하게 짬
+        일단 맞게 뜸
         String s = br.readLine();
         int sum = 0;
         int cnt = 0;
@@ -42,5 +42,22 @@ public class Boj_7567 {
             }
         }
         System.out.println(sum);
+ */
+
+public class Boj_7567 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s = br.readLine();
+        int ans = 10;
+
+        for(int i=1; i<s.length(); i++) {
+            if(s.charAt(i) == s.charAt(i-1)) {
+                ans += 5;
+            }
+            else {
+                ans += 10;
+            }
+        }
+        System.out.println(ans);
     }
 }
