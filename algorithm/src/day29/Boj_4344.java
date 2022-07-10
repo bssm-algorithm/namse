@@ -1,9 +1,11 @@
 package day29;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /*
 배열에 다 정하면서 다 더함
@@ -13,18 +15,20 @@ import java.util.Scanner;
  */
 public class Boj_4344 {
     public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
-        int c = sc.nextInt();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int c = Integer.parseInt(br.readLine());
 
         for(int i=0; i<c; i++) {
-            int n = sc.nextInt();
+            String s = br.readLine();
+            StringTokenizer st = new StringTokenizer(s, " ");
+            int n = Integer.parseInt(st.nextToken());
             int sum = 0;
             int k = 0;
             float cnt = 0;
             List<Integer> list = new ArrayList<>();
 
             for(int j=0; j<n; j++) {
-                list.add(sc.nextInt());
+                list.add(Integer.parseInt(st.nextToken()));
                 sum += list.get(j);
             }
 
