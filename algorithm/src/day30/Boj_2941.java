@@ -1,37 +1,38 @@
-package day18;
+package day30;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Boj_2941 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] arr = {"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
-        int cnt = 0;
-        int[] en = new int[26];
+        List<Integer> list = new ArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
 
-        String s = br.readLine();
-        String temp = s;
-
-        for(int i=0; i<arr.length; i++) {
-            if(s.contains(arr[i])) {
-                cnt++;
-                s = s.replace(arr[i], "");
-                if(s.equals("")) {
-                    cnt++;
-                }
+        for(int i=0; i<20; i++) {
+            int n = Integer.parseInt(br.readLine());
+            if(i<10) {
+                list.add(n);
+            }
+            else {
+                list2.add(n);
             }
         }
 
-        for(int i=0; i<26; i++) {
-            for(int j=0; j<s.length(); j++) {
-                en[s.charAt(j) - 'a'] += 1;
-            }
-            if(en[i] > 0) {
-                cnt++;
-            }
+        Collections.sort(list, Collections.reverseOrder());
+        Collections.sort(list2, Collections.reverseOrder());
+
+        int sum = 0;
+        int sum2 = 0;
+        for(int i=0; i<3; i++) {
+            sum += list.get(i);
+            sum2 += list2.get(i);
         }
-        System.out.println(cnt);
+
+        System.out.println(sum + " " + sum2);
     }
 }
